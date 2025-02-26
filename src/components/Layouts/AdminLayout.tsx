@@ -82,7 +82,7 @@ const AdminLayout = () => {
                 />
                 <QuickActionBox
                   icon={<FaUsers className="text-4xl text-blue-600" />}
-                  text="User Management"
+                  text="Agent List"
                   to="/admin/agents-list"
                 />
               </div>

@@ -6,6 +6,8 @@ import UserLayout from "../components/Layouts/UserLayout";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import ProtectedRoute from "../components/Layouts/ProtectedRoute";
+import AgentRequest from "../components/AgentRequest";
+import AgentList from "../components/AgentList";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
           <AdminLayout />
         </ProtectedRoute>
       ),
+      children: [
+        { path: "agents-approval-request", element: <AgentRequest/> },
+        {path: "agents-list", element: <AgentList/>}
+      ]
   },
   {
     path: "/agent",

@@ -8,7 +8,28 @@ const authApi = baseApi.injectEndpoints({
         method: "GET",
       }),
     }),
+    agentsApprovalRequest: builder.query({
+        query: () => ({
+          url: "/user/agents-approval-request",
+          method: "GET",
+        }),
+      }),
+      agentsApproval: builder.mutation({
+          query: ({ id, status }) => (
+              console.log(id, status),
+              {
+              url: `/user/agents-approval/${id}`,
+              method: "PUT",
+              body: status ,
+            }),
+      }),
+      getAgents: builder.query({
+        query: () => ({
+          url: "/user/getAgents",
+        method: "GET"
+        })
+      })
   }),
 });
 
-export const { useGetAdminQuery } = authApi;
+export const { useGetAdminQuery, useAgentsApprovalMutation, useGetAgentsQuery, useAgentsApprovalRequestQuery} = authApi;
