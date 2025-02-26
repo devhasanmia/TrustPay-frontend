@@ -5,6 +5,7 @@ import NotFound from "../pages/NotFound";
 import UserLayout from "../components/Layouts/UserLayout";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
+import ProtectedRoute from "../components/Layouts/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -13,15 +14,23 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <AdminLayout />
+    element: (
+        <ProtectedRoute role="Admin">
+          <AdminLayout />
+        </ProtectedRoute>
+      ),
   },
   {
     path: "/agent",
-    element: <AgentLayout />
+    element: <ProtectedRoute role="Agent">
+    <AgentLayout />
+  </ProtectedRoute>
   },
   {
     path: "/user",
-    element: <UserLayout />
+    element: <ProtectedRoute role="User">
+    <UserLayout />
+  </ProtectedRoute>
   },
   {
     path: "/login",
