@@ -18,3 +18,12 @@ export const userValidationSchema = z.object({
             message: "NID must be either 10, 13, or 17 digits long"
         }),
 });
+
+
+export const loginValidationSchema = z.object({
+    mobileNumber: z.string({
+        required_error: "Mobile Number is required",
+        invalid_type_error: "Mobile Number must be a String"
+    }).regex(/^\d{11}$/, "Mobile Number must be exactly 11 digits"),
+    pin: z.string().regex(/^\d{5}$/, "PIN must be exactly 5 digits"),
+})
