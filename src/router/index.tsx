@@ -8,6 +8,7 @@ import Registration from "../pages/Registration";
 import ProtectedRoute from "../components/Layouts/ProtectedRoute";
 import AgentRequest from "../components/AgentRequest";
 import AgentList from "../components/AgentList";
+import SendMoney from "../components/SendMoney";
 
 const router = createBrowserRouter([
   {
@@ -34,9 +35,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/user",
-    element: <ProtectedRoute role="User">
-    <UserLayout />
-  </ProtectedRoute>
+    element: <ProtectedRoute role="User"><UserLayout /></ProtectedRoute>,
+  children: [
+    { path: "send-money", element: <SendMoney/> },
+    // { path: "agent-list", element: <AgentList/>}
+  ]
   },
   {
     path: "/login",

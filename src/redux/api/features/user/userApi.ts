@@ -28,8 +28,14 @@ const authApi = baseApi.injectEndpoints({
           url: "/user/getAgents",
         method: "GET"
         })
+      }),
+      getUser: builder.query({
+        query: () => ({
+          url: "/user/getUser",
+          method: "GET"
+        })
       })
   }),
 });
 
-export const { useGetAdminQuery, useAgentsApprovalMutation, useGetAgentsQuery, useAgentsApprovalRequestQuery} = authApi;
+export const { useGetAdminQuery, useAgentsApprovalMutation, useGetAgentsQuery, useAgentsApprovalRequestQuery, useGetUserQuery} = authApi;
