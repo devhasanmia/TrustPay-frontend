@@ -5,7 +5,7 @@ import { useAppDispatch } from "../../redux/hooks";
 import { logout } from "../../redux/api/features/auth/authSlice";
 import { Outlet } from "react-router";
 import { useGetUserQuery } from "../../redux/api/features/user/userApi";
-
+import { FaMoneyBillTrendUp } from "react-icons/fa6";
 
 const UserLayout = () => {
   const [balanceVisible, setBalanceVisible] = useState(false);
@@ -70,14 +70,9 @@ const UserLayout = () => {
                   to="/user/send-money"
                 />
                 <QuickActionBox
-                  icon={<MdMoneyOff className="text-4xl text-blue-600" />}
+                  icon={<FaMoneyBillTrendUp className="text-4xl text-blue-600" />}
                   text="Cash Out"
                   to="/user/cash-out"
-                />
-                <QuickActionBox
-                  icon={<MdNotifications className="text-4xl text-blue-600" />}
-                  text="Send Reminder"
-                  to="/user/send-reminder"
                 />
                 <QuickActionBox
                   icon={<MdHistory className="text-4xl text-blue-600" />}

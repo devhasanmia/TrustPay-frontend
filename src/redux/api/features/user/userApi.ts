@@ -13,6 +13,7 @@ const authApi = baseApi.injectEndpoints({
           url: "/user/agents-approval-request",
           method: "GET",
         }),
+        providesTags: ["transactions", "user"]
       }),
       agentsApproval: builder.mutation({
           query: ({ id, status }) => (
@@ -22,18 +23,21 @@ const authApi = baseApi.injectEndpoints({
               method: "PUT",
               body: status ,
             }),
+            invalidatesTags: ["transactions", "user"]
       }),
       getAgents: builder.query({
         query: () => ({
           url: "/user/getAgents",
         method: "GET"
-        })
+        }),
+        providesTags: ["transactions", "user"]
       }),
       getUser: builder.query({
         query: () => ({
           url: "/user/getUser",
           method: "GET"
-        })
+        }),
+        providesTags: ["transactions", "user"]
       })
   }),
 });

@@ -11,6 +11,7 @@ export const baseApi = createApi({
       headers.set("authorization", `${token}`);
     }
   }}),
+  tagTypes: ["transactions","user"],
   endpoints: () => ({}),
 });
 
