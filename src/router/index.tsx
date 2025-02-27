@@ -11,8 +11,7 @@ import AgentList from "../components/AgentList";
 import SendMoney from "../components/SendMoney";
 import CashOut from "../components/Cashout";
 import Transactions from "../components/Transactions";
-import GetAllTransactions from "../components/Transactions";
-import GetATransactions from "../components/GetAllTransactions";
+import GetAllTransactions from "../components/GetAllTransactions";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +28,7 @@ const router = createBrowserRouter([
       children: [
         { path: "agents-approval-request", element: <AgentRequest/> },
         {path: "agents-list", element: <AgentList/>},
-        { path: "transactions", element: <GetATransactions/>}
+        { path: "transactions", element: <GetAllTransactions/>}
       ]
   },
   {
