@@ -38,8 +38,15 @@ const authApi = baseApi.injectEndpoints({
           method: "GET"
         }),
         providesTags: ["transactions", "user"]
+      }),
+      getAgentown: builder.query({
+        query: () => ({
+          url: "/user/getAgentown",
+          method: "GET"
+        }),
+        providesTags: ["transactions", "user"]
       })
   }),
 });
 
-export const { useGetAdminQuery, useAgentsApprovalMutation, useGetAgentsQuery, useAgentsApprovalRequestQuery, useGetUserQuery} = authApi;
+export const { useGetAdminQuery, useAgentsApprovalMutation, useGetAgentsQuery, useAgentsApprovalRequestQuery, useGetUserQuery, useGetAgentownQuery} = authApi;

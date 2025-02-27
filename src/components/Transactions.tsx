@@ -11,7 +11,7 @@ const Transactions = () => {
   const transactions = transactionData?.data || [];
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">User Transactions</h1>
+      <h1 className="text-2xl font-bold mb-4">Transactions</h1>
       {transactions.length > 0 ? (
         <div className="space-y-4">
           {transactions.map((transaction: any) => (

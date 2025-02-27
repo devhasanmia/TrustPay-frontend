@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MdNotifications, MdLogout, MdSend, MdMoneyOff, MdHistory } from "react-icons/md";
+import { MdNotifications, MdLogout, MdSend,MdHistory } from "react-icons/md";
 import QuickActionBox from "../UI/QuickActionBox";
 import { useAppDispatch } from "../../redux/hooks";
 import { logout } from "../../redux/api/features/auth/authSlice";

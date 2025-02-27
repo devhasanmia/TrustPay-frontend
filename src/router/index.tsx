@@ -12,6 +12,7 @@ import SendMoney from "../components/SendMoney";
 import CashOut from "../components/Cashout";
 import Transactions from "../components/Transactions";
 import GetAllTransactions from "../components/GetAllTransactions";
+import CashIn from "../components/CashIn";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
     path: "/agent",
     element: <ProtectedRoute role="Agent">
     <AgentLayout />
-  </ProtectedRoute>
+  </ProtectedRoute>,
+  children: [
+    {path: "cashIn",element: <CashIn/>},
+    {path: "transactions",element: <Transactions/>}
+  ]
   },
   {
     path: "/user",
